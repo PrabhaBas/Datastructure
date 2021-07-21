@@ -13,11 +13,12 @@ int main()
 {
 	struct node *root;
 	root = create();
-	printf("\nThe preorder traversal of tree is:\n");
+	
+	printf("\nThe preorder traversal of tree :\n");
 	preOrder(root);
-	printf("\nThe inorder traversal of tree is:\n");
+	printf("\nThe inorder traversal of tree :\n");
 	inOrder(root);
-	printf("\nThe postorder traversal of tree is:\n");
+	printf("\nThe postorder traversal of tree :\n");
 	postOrder(root);
 	return 0;
 }
@@ -37,6 +38,18 @@ struct node* create()
 	newNode->right = create();
 	return newNode;
 }
+/*
+
+void preOrder(struct node *head) //Root-Left-Right
+{
+	if(head==NULL)
+	return;
+	
+		printf("%d --> ",head->data);
+		preOrder(head->left);
+		preOrder(head->right);	
+}
+*/
 void preOrder(struct node *head) //Root-Left-Right
 {
 	if(head!=NULL)
@@ -44,8 +57,7 @@ void preOrder(struct node *head) //Root-Left-Right
 		printf("%d --> ",head->data);
 		preOrder(head->left);
 		preOrder(head->right);
-	}
-	
+	}	
 }
 void inOrder(struct node *head)//Left-Root-Right
 {
